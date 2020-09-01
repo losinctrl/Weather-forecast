@@ -3,10 +3,10 @@ const app = express()
 const path = require('path')
 
 const hbs = require('hbs')
-
+ 
+const port = process.env.PORT || 3000;
 const geocode = require('./utilise/geocode.js')
 const forecast = require('./utilise/forecast.js')
-
 
 const staticData = path.join(__dirname,'../public')
 const viewPath = path.join(__dirname,'../templates')
@@ -73,6 +73,6 @@ app.get('/weather',(req,res)=>{
     })
     
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
 console.log('the app is listening on port 3000')
 })

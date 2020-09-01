@@ -1,3 +1,4 @@
+console.log("fcuk")
 const weatherform = document.querySelector('form');
 const inputform  = document.querySelector('input')
 const messageOne = document.querySelector('.message-1')
@@ -6,7 +7,7 @@ weatherform.addEventListener('submit',(event)=>{
     event.preventDefault()
 const location = inputform.value;
 messageOne.textContent = "Loading..."
-fetch('http://localhost:3000/weather?address='+ location).then((response)=>{
+fetch('/weather?address='+ location).then((response)=>{
 response.json().then((data)=>{
    
     if(data.error){
